@@ -1,0 +1,37 @@
+.backgroundCadastro {
+    background-image: url(../img/backgroundCadastro.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.painelCadastro {
+    background-color: #FFF;
+    width: 83.5%;
+    margin: 0 auto;
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, .4);
+    border-radius: 12px;
+    padding: 7.5rem 0;
+}
+
+.painelCadastro h2 {
+    margin: 0;
+    padding-bottom: 5rem;
+}
+
+@media screen and (min-width: 400px) {
+    .painelCadastro {
+        width: 60%;    
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .painelCadastro {
+        width: 41%;    
+    }
+}

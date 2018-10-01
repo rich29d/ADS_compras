@@ -1,0 +1,741 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Inicio</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Passion+One" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://www.pomojob.richardds.com.br/comum/admin/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <link href="_css/Btn.css" rel="stylesheet" type="text/css" />
+    <link href="_css/animate.css" rel="stylesheet" type="text/css" />
+    <link href="_css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+
+<body>
+
+
+<div class="mold-tela">
+
+
+    <div class="header tab">
+        <div class="cel txt-left w3">
+            <a class="logo" href="javascript:void(0);"><img src="_img/site_logo.png" alt=""></a>
+        </div>
+        <div class="search cel"><input type="text" placeholder="O que você Procura?" class="input-search"/></div>
+        <div class="user-header cel txt-right w3">
+            <span class="nome-perfil"></span>
+            <img class='img-perfil'/>
+        </div>
+    </div>
+
+
+
+
+    <div class="body-content">
+        <div id="menu-container">
+            <div id="menu-wrapper">
+                <div id="hamburger-menu"><span></span><span></span><span></span></div>
+                <div class="mouse-hover"></div>
+            </div>
+            <!-- menu-wrapper -->
+            <ul class="menu-list accordion">
+
+                <div class="coluna-menu"></div>
+
+                <li id="nav1" class="item-menu">
+                    <a class="menu-link" href="telagestor.html">
+                        <div class="icon-menu solicitacao"></div>
+                        <div class="txt-menu"><span>Solicitação de Compra</span></div>
+                        <div class="count-not">+99</div>
+                    </a>
+                </li>
+                <!-- accordion-toggle -->
+
+                <!-- menu-submenu accordon-content-->
+                <li id="nav2" class="item-menu">
+                    <a class="menu-link" href="telafuncionario.html">
+                        <div class="icon-menu funcionarios"></div>
+                        <div class="txt-menu"><span>Funcionarios</span></div>
+                    </a>
+                </li>
+                <!-- accordion-toggle -->
+
+                <!-- menu-submenu accordon-content-->
+                <li id="nav3" class="item-menu">
+                    <a class="menu-link" href="telafornecedores.html">
+                        <div class="icon-menu fornecedores"></div>
+                        <div class="txt-menu"><span>Fornecedores</span></div>
+                    </a>
+                </li>
+                <!-- accordion-toggle -->
+
+                <li id="nav4" class="item-menu">
+                    <a class="menu-link" href="telacotacao.html">
+                        <div class="icon-menu cotacao"></div>
+                        <div class="txt-menu"><span>Cotação</span></div>
+                        <div class="count-not">1</div>
+                    </a>
+                </li>
+
+                <li id="nav5" class="item-menu">
+                    <a class="menu-link" href="telaordemcompra.html">
+                        <div class="icon-menu ordem"></div>
+                        <div class="txt-menu"><span>Ordem de Compra</span></div>
+                    </a>
+                </li>
+
+                <li id="nav6" class="item-menu">
+                    <a class="menu-link" href="telahistoricocompra.html">
+                        <div class="icon-menu historico"></div>
+                        <div class="txt-menu"><span>Historico de Compra</span></div>
+                    </a>
+                </li>
+
+
+
+
+                <!-- menu-submenu accordon-content-->
+            </ul>
+            <!-- menu-list accordion-->
+        </div>
+        <!-- menu-container -->
+
+
+        <div class="content-tela">
+
+
+
+            <div class="content-left">
+                <div class="title-header-box">
+                    Solicitações
+                    <div class="sub-title floatright">
+                        CLIQUE EM UMA SOLICITAÇÃO PARA ANALISAR
+                    </div>
+                </div>
+                <div class="cont-nova-solicitacao flex-box">
+                    <div class="item-flex-box cmp-txt w9">
+                        <select class="select2 slt-produto" data-placeholder="Selecione um produto" style="width: 100%"></select>
+                    </div>
+                    <div class="item-flex-box cmp-txt w2">
+                        <input type="number" class="cmp-qtde" placeholder="Qtde" min="1" value="1"/>
+                    </div>
+                    <div class="item-flex-box txt-right no-padding" style="width: 32px;">
+                        <button class="Btn Btn--success Btn--square" onclick="addItem()" data-toggle="tooltip" data-placement="top" title="Adicionar novo item">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <table class="tabela">
+                    <thead>
+                    <tr>
+                        <th> ID </th>
+                        <th> Produto </th>
+                        <th> Qtde </th>
+                        <th> setor </th>
+                        <th> Status </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div class="content-right">
+                <div class="title-header-box">
+                    Informações
+                    <div class="sub-title floatright">
+                        RESUMO DO HISTÓRICO DE COMPRAS
+                    </div>
+                </div>
+
+
+                <div class="cont empty-solicitacao">
+                    <div class="cont-canvas">
+                        <div class="box-canvas">
+                            <div class="div-canvas canvas-compras-frente">
+                                <canvas id="grafico-compras-frente" style="width: 100%; height: 100%;"></canvas>
+                            </div>
+                        </div>
+                        <div class="box-canvas overflow-hidden">
+                            <div class="div-canvas canvas-compras-tras">
+                                <canvas id="grafico-compras-tras" style="width: 100%; height: 100%; border-radius: 5px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cont info-solicitacao none">
+                    <div class="info-item">
+                        <label>Produto:</label>
+                        <span class="produto"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Quantidade:</label>
+                        <span class="quantidade"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Funcionario:</label>
+                        <span class="funcionario"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Setor:</label>
+                        <span class="setor"></span>
+                    </div>
+                    <div class="info-item">
+                        <label>Data da Solicitação:</label>
+                        <span class="data"></span>
+                    </div>
+                    <div class="cont-btn txt-right">
+                        <button type="button" class="Btn Btn--default-outline Btn--icon-before floatleft" onclick="resumo()">
+                            <div class="tab">
+                                <div class="cel">
+                                    <i class="fa fa-area-chart" aria-hidden="true"></i>
+                                </div>
+                                <div class="cel">
+                                    Ver resumo
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="Btn Btn--aprovar Btn--success Btn--icon-before" onclick="aprovar_solicitacao(true)">
+                            <div class="tab">
+                                <div class="cel">
+                                    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                </div>
+                                <div class="cel">
+                                    Aprovar
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="Btn Btn--danger Btn--icon-before Btn--margin-left" onclick="aprovar_solicitacao(false)">
+                            <div class="tab">
+                                <div class="cel">
+                                    <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                                </div>
+                                <div class="cel">
+                                    Rejeitar
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="cont mensagem-cancel none">
+                    <label>Justifique a Rejeição</label>
+                    <textarea></textarea>
+                    <div class="cont-btn txt-right">
+                        <button type="button" class="Btn Btn--default-outline Btn--icon-before floatleft" onclick="ir_para_info()">
+                            <div class="tab">
+                                <div class="cel">
+                                    <i class="fa fa-reply" aria-hidden="true"></i>
+                                </div>
+                                <div class="cel">
+                                    Voltar
+                                </div>
+                            </div>
+                        </button>
+                        <button type="button" class="Btn Btn--icon-before Btn--margin-left" onclick="enviar_mensagem()">
+                            <div class="tab">
+                                <div class="cel">
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                </div>
+                                <div class="cel">
+                                    Enviar
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="cont tab aprovar-sucesso none">
+                    <div class="cel">
+                        <img class="cotacao_img animated fadeInUp" src="_img/cotacao_img.svg" alt="">
+                        <div class="tit-resposta">Pedido aprovado</div>
+                        <div class="txt-resposta">
+                            Este pedido foi aprovado e encaminhado<br>para a página de cotação.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cont tab rejeitar-sucesso none">
+                    <div class="cel">
+                        <img class="cotacao_img animated fadeInDown" src="_img/icones/thumbs-down.svg" alt="">
+                        <div class="tit-resposta">Pedido rejeitado</div>
+                        <div class="txt-resposta">
+                            Este pedido foi rejeitado<br>e removido da lista.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="telacadastro"></div>
+
+        <script type="text/javascript">
+
+            function addItem() {
+                var produto = $('.slt-produto option[value=' +  $('.slt-produto').val() +']').text();
+                var qtde = $('.cmp-qtde').val();
+
+                if(produto=='' || qtde==''){
+                    notifica('Preencha o campo ' + (produto=='' ? 'produto' : 'Quantidade'),'danger');
+                    return;
+                }
+
+                var html =
+                    "<tr class='item-novo'>" +
+                    "    <td>" +produto + "</td>"  +
+                    "    <td>" + qtde + "</td>"  +
+                    "    <td>Pendente</td>"  +
+                    "</tr>";
+                $('.tabela tbody').prepend(html);
+
+                notifica("Solicitação adicionada com sucesso","success");
+            }
+
+            $('.select2').select2({
+                ajax: {
+                    //url: 'https://api.mockaroo.com/api/684a4fd0?count=25&key=164c6660',
+                    url: 'https://richardds.com.br/projetos/teste/produtos.php',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    type: "GET", /* or type:"GET" or type:"PUT" */
+                    dataType: "json",
+                    processResults: function (data) {
+                        return {
+                            results: data
+                        };
+                    }
+                }
+            });
+
+            function notifica(msg,tipo){
+                $.notify({
+                    // options
+                    message: msg
+                },{
+                    // settings
+                    type: tipo,
+                    timer: 1000,
+                    offset: {y:75, x:15},
+                    animate: {
+                        enter: 'animated fadeInDown',
+                        exit: 'animated fadeOutUp'
+                    },
+                    placement: {
+                        from: "top",
+                        align: "right"
+                    },
+                });
+            }
+
+            function aprovar_solicitacao(b){
+                $('.cont').hide();
+                if(b) {
+                    $('.aprovar-sucesso').fadeIn().css({'display': 'table'});
+                    setTimeout(function () {
+                        resumo()
+                    }, 5000);
+                }else{
+                    $('.mensagem-cancel textarea').val('');
+                    $('.mensagem-cancel').fadeIn();
+                }
+            }
+
+            function ir_para_info(){
+                $('.cont, .title-header-box .sub-title').hide();
+                $('.info-solicitacao').fadeIn();
+            }
+
+            function resumo(){
+                $('.cont').hide();
+                $('.empty-solicitacao, .title-header-box .sub-title').fadeIn();
+            }
+
+            function enviar_mensagem(){
+                if($('.mensagem-cancel textarea').val()!=''){
+                    $('.cont').hide();
+                    $('.rejeitar-sucesso').fadeIn().css({'display':'table'});
+                    setTimeout(function(){
+                        resumo()
+                    },5000);
+                }else{
+                    notifica("Insira a justificativa para enviar a mensagem",'danger');
+                }
+
+            }
+
+            function randomScalingFactor() {
+                return Math.round(Samples.utils.rand(1000, 2000));
+            };
+            var MONTHS = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            var chartColors = {
+                red: 'rgba(255, 99, 132, 0)',
+                orange: 'rgba(255, 159, 64, 0)',
+                yellow: 'rgba(255, 205, 86, 0)',
+                green: 'rgba(75, 192, 192, 0)',
+                blue: 'rgba(54, 162, 235, 0)',
+                purple: 'rgba(153, 102, 255, 0)',
+                grey: 'rgba(201, 203, 207, 0)'
+            };
+
+            var borderWith = .001;
+
+            var data_chat = [
+                [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    2000
+                ],
+                [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    2000
+                ],
+                [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    2000
+                ],
+                [
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    randomScalingFactor(),
+                    2000
+                ],
+                [0,0,0,0,0,0]
+            ];
+            for(var i=0; i<data_chat.length-1; i++){
+                for(var j in data_chat[i]){
+                    data_chat[4][j] += data_chat[i][j];
+                }
+            }
+
+            console.log(data_chat);
+
+            var ctx_trs = document.getElementById("grafico-compras-tras").getContext("2d");
+
+            //TRANSPARENTE
+            var bg_total = ctx_trs.createLinearGradient(0, 0, 0, 450);
+            bg_total.addColorStop(0, 'rgba(52, 73, 94, .8)');
+            bg_total.addColorStop(1, 'rgba(52, 73, 94, 1)');
+
+            Chart.Tooltip.positioners.cursor = function(chartElements, coordinates) {
+                coordinates.y = 100;
+                //console.log(chartElements);
+                return coordinates;
+            };
+
+            var config_frente = {
+                type: 'line',
+                data: {
+                    labels: ["DEZEMBRO","JANEIRO", "FEVEREIRO", "MARÇO", "ABRIL"," "],
+                    datasets: [{
+                        label: 'Contábil',
+                        backgroundColor: chartColors.green,
+                        borderColor: chartColors.green,
+                        data: data_chat[0],
+                        fill: false
+                    }, {
+                        label: 'Comercial',
+                        fill: false,
+                        backgroundColor: chartColors.red,
+                        borderColor: chartColors.red,
+                        data: data_chat[1],
+                    },{
+                        label: 'Marketing',
+                        backgroundColor: chartColors.blue,
+                        borderColor: chartColors.blue,
+                        data: data_chat[2],
+                        fill: false
+                    },{
+                        label: 'Executivo',
+                        backgroundColor: chartColors.orange,
+                        borderColor: chartColors.orange,
+                        data: data_chat[3],
+                        fill: false
+                    },
+                    {
+                        label: 'Total',
+                        backgroundColor: chartColors.orange,
+                        borderColor: 'rgba(52, 73, 94, 1)',
+                        data: data_chat[4],
+                        fill: true,
+                        borderWidth: .001,
+                        pointRadius: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title:{
+                        display:false
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                mirror: true,
+                                fontSize: 16,
+                                padding: -60,
+                                fontColor:"rgba(255,255,255,.7)",
+                                callback: function(value, index, values) {
+                                    return index != 0 ? value : '';
+                                }
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                mirror: true,
+                                fontSize: 18,
+                                padding: -30,
+                                fontFamily: "Passion One",
+                                fontColor:"rgba(255,255,255,.7)",
+                                stepSize: 2000,
+                                callback: function(value, index, values) {
+                                    return value != 0 ? 'R$ ' + value : '';
+                                }
+                            }
+
+                        }]
+                    },
+                    tooltips: {
+                        enabled: true,
+                        mode: 'index',
+                        intersect: false,
+                        position: 'nearest',
+                        custom: function(tooltip) {
+                            tooltip.displayColors = false;
+                            tooltip.fontColor = '#FFF';
+                        },
+                        callbacks: {
+                            label: function(tooltipItems, data) {
+                                return data.datasets[tooltipItems.datasetIndex].label + ': R$ ' + Number(tooltipItems.yLabel).toLocaleString('pt') + ',00';
+                            }
+                        }
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            };
+
+            var config_tras = {
+                type: 'line',
+                data: {
+                    labels: ["","Janeiro", "Fevereiro", "Março", "Abril",""],
+                    datasets: [{
+                        label: 'Contábil',
+                        backgroundColor: chartColors.green,
+                        borderColor: chartColors.green,
+                        data: data_chat[0],
+                        fill: true,
+                        borderWidth: borderWith,
+                        pointRadius: 0
+                    }, {
+                        label: 'Comercial',
+                        backgroundColor: chartColors.red,
+                        borderColor: chartColors.red,
+                        data: data_chat[1],
+                        fill: true,
+                        borderWidth: borderWith,
+                        pointRadius: 0
+                    },{
+                        label: 'Marketing',
+                        backgroundColor: chartColors.blue,
+                        borderColor: chartColors.blue,
+                        data: data_chat[2],
+                        fill: true,
+                        borderWidth: borderWith,
+                        pointRadius: 0
+                    },{
+                        label: 'Executivo',
+                        backgroundColor: chartColors.orange,
+                        borderColor: chartColors.orange,
+                        data: data_chat[3],
+                        fill: true,
+                        borderWidth: borderWith,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'Total',
+                        backgroundColor: bg_total,
+                        borderColor: 'rgba(52, 73, 94, 1)',
+                        data: data_chat[4],
+                        fill: true,
+                        borderWidth: .001,
+                        pointRadius: 0,
+                        pointBackgroundColor: '#1e2e3e'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title:{
+                        display:false
+                    },
+                    hover: {
+                        mode: 'nearest',
+                        intersect: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            ticks: {
+                                mirror: true,
+                                fontSize: 16,
+                                padding: -50,
+                                callback: function(value, index, values) {
+                                    return '';
+                                }
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                mirror: true,
+                                fontSize: 18,
+                                padding: -30,
+                                fontFamily: "Passion One",
+                                fontColor:"#000",
+                                stepSize: 2000,
+                                callback: function(value, index, values) {
+                                    return 'R$ ' + value;
+                                }
+                            }
+
+                        }]
+                    },
+                    legend: {
+                        display: false
+                    }
+                }
+            };
+
+            $(function(){
+
+                $('[data-toggle="tooltip"]').tooltip({trigger: "hover"});
+
+                var tabela = $('.tabela').dataTable( {
+                    ajax: {
+                        /*url: "https://api.mockaroo.com/api/a61e2ee0?count=10&key=164c6660",
+                        dataSrc: ''*/
+                        url:'https://richardds.com.br/projetos/teste/solicitacao_de_compra.php',
+                        dataSrc: 'data'
+                    },
+                    columns: [
+                        { data: 'id' },
+                        { data: 'produto' },
+                        { data: 'quantidade' },
+                        { data: 'setor' },
+                        { data: 'status' }
+                    ],
+                    "info": false,
+                    "lengthChange": false,
+                    "paging": false,
+                    "bProcessing": false,
+                    "language": {
+                        "loadingRecords": "Procurando...",
+                        "infoEmpty": "Nenhum item encontrado",
+                        "search": "",
+                        "searchPlaceholder": "Buscar solicitação",
+                        "paginate": {
+                            "first":      "Primeiro",
+                            "last":       "Último",
+                            "next":       "Próximo",
+                            "previous":   "Anterior"
+                        },
+                    },
+                    'createdRow': function( row, data, dataIndex ) {
+                        $(row).on('click',function(){
+                            ir_para_info();
+                            $.each( data, function( k, v ) {
+                                $('.info-item .' + k).text(v);
+                                if(k=='status' && v=='Aprovado')
+                                    $('.Btn--aprovar').hide();
+                                else
+                                    $('.Btn--aprovar').show();
+                            })
+                        })
+                    },
+                    "aoColumnDefs": [
+                        { "bSearchable": false, "bVisible": false,  "aTargets": [ 0 ] },
+                        { "aTargets": [ 1 ] },
+                        { "aTargets": [ 2 ] },
+                        { "bSearchable": false, "bVisible": false,  "aTargets": [ 3 ] },
+                        {
+                            "mRender": function ( data, type, row ) {
+                                return '<span style="color:' + (data=='Aprovado' ? '#5ac2a0':'#ff9800') + '">' + data + '</span>';
+                            },
+                            "aTargets": [ 4 ]
+                        }
+                    ]
+                });
+
+                var ctx_fnt = document.getElementById("grafico-compras-frente").getContext("2d");
+                new Chart(ctx_fnt, config_frente);
+
+
+                new Chart(ctx_trs, config_tras);
+
+            });
+
+        </script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <!-- DATA TABES SCRIPT -->
+        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+        <script src="http://cdn.datatables.net/buttons/1.4.2/js/buttons.html5.min.js" type="text/javascript"></script>
+        <script src="http://www.pomojob.richardds.com.br/comum/admin/plugins/datatables/dataTables.bootstrap.min.js" type="text/javascript"></script>
+
+        <script src="js/menu.js"></script>
+        <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+        <script src="js/animateSVG.js"></script>
+        <script src="js/bootstrap-notify.min.js"></script>
+
+    </div>
+</div>
+</body>
+</html>
